@@ -39,8 +39,9 @@ class Auto:
 
             i = 1
             while (integridad_asientos) and (i < nAsientos):
-                if not (self.asientos[i].registro == registro_asiento):
-                    integridad_asientos = False
+                if (isinstance(self.asientos[i], Asiento)):
+                    if not (self.asientos[i].registro == registro_asiento):
+                        integridad_asientos = False
                 i += 1
 
         if integridad_asientos:
