@@ -32,16 +32,18 @@ class Auto:
         # verificar integridad asientos
         integridad_asientos = True
 
-        registro_asiento = False
-        nAsientos = len(self.asientos)
+        registro_asiento = -1
+        nAsientos = self.cantidadAsientos()
+        
         if nAsientos > 0:
-            registro_asiento = self.asientos[0].registro
-
             i = 1
-            while (integridad_asientos) and (i < nAsientos):
-                if (isinstance(self.asientos[i], Asiento)):
+            while (integridad_asientos) and (i < len(self.asientos)):
+                if (isinstance(self.asientos[i], Asiento) and (registro_asiento != -1):
                     if not (self.asientos[i].registro == registro_asiento):
                         integridad_asientos = False
+                elif isinstance(self.asientos[i], Asiento) and (registro_asiento == -1):
+                    registro_asiento = self.asientos[i].registro    
+
                 i += 1
 
         if integridad_asientos:
