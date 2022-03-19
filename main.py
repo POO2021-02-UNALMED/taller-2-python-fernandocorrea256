@@ -26,6 +26,7 @@ class Auto:
         for asiento in self.asientos:
             if isinstance(asiento, Asiento):
                 contador += 1
+        return contador
 
     def verificarIntegridad(self):
         # verificar integridad asientos
