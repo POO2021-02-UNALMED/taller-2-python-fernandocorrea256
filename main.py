@@ -36,7 +36,7 @@ class Auto:
         nAsientos = self.cantidadAsientos()
         
         if nAsientos > 0:
-            i = 1
+            i = 0
             while integridad_asientos and (i < len(self.asientos)):
                 if isinstance(self.asientos[i], Asiento) and (registro_asiento != -1):
                     if not (self.asientos[i].registro == registro_asiento):
